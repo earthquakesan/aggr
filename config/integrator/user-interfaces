@@ -4,7 +4,8 @@
     "type": "user-interfaces",
     "attributes": {
       "label": "Monitor",
-      "base-url": "http://monitor.aggrdemo.semte.ch"
+      "base-url": "http://monitor.aggrdemo.semte.ch/",
+      "append-path": "pipelines/index"
     }
   },
   {
