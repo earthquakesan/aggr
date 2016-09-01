@@ -103,7 +103,7 @@ services:
   csswrapper:
     image: bde2020/nginx-proxy-with-css
     ports:
-      - 80:80
+      - 10080:80
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock
   ###
