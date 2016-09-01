@@ -118,14 +118,10 @@ services:
     links:
       - cache:cache
       - resource:resource
-    ports:
-      - 8881:80
   aggr_web:
     image: caspervg/aggr-web
     volumes:
       - ./data/logs:/logs
-    ports:
-      - 8880:80
   database:
     image: tenforce/virtuoso:1.0.0-virtuoso7.2.2
     environment:
@@ -135,8 +131,6 @@ services:
       VIRTUAL_PORT: 8890
     volumes:
       - ./data/db:/data
-    ports:
-      - 8890:8890
   resource:
       image: semtech/mu-cl-resources:1.13.0
       links:
