@@ -45,7 +45,8 @@
     "type": "user-interfaces",
     "attributes": {
       "label": "Hue",
-      "base-url": "http://hue.aggrdemo.semte.ch"
+      "base-url": "http://hue.aggrdemo.semte.ch/",
+      "append-path": "filebrowser"      
     }
   },
   {
