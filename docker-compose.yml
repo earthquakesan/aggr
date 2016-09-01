@@ -4,6 +4,12 @@ services:
   ###
   # Spark big data aggregation service
   ###
+  viz:
+    image: erikap/aggr-viz:1.1.0
+    links:
+      - identifier:backend
+    environment:
+      VIRTUAL_HOST: viz.demo.big-data-europe.local
   namenode:
     image: bde2020/hadoop-namenode:1.0.0
     hostname: namenode
