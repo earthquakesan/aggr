@@ -89,7 +89,7 @@ services:
     links:
       - "master:spark-master"
   integratorui:
-    image: bde2020/integrator-ui:latest
+    image: bde2020/integrator-ui:0.4.2
     volumes:
       - ./config/integrator:/app/config
     environment:
@@ -104,7 +104,7 @@ services:
   # mu.semte.ch stack
   ###
   monitor:
-    image: bde2020/pipeline-monitor-frontend:0.1.0
+    image: bde2020/pipeline-monitor-frontend:0.2.1
     links:
       - identifier:backend
     environment:
@@ -138,7 +138,7 @@ services:
     ports:
       - 8890:8890
   resource:
-      image: semtech/mu-cl-resources:latest
+      image: semtech/mu-cl-resources:1.13.0
       links:
         - database:database
       volumes:
