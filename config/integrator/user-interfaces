@@ -3,40 +3,40 @@
     "id": 1,
     "type": "user-interfaces",
     "attributes": {
-      "label": "Spark Master",
-      "base-url": "http://spark-master.demo.big-data-europe.local"
+      "label": "Monitor",
+      "base-url": "http://monitor.aggrdemo.semte.ch"
     }
   },
   {
     "id": 2,
     "type": "user-interfaces",
     "attributes": {
-      "label": "Spark Worker",
-      "base-url": "http://spark-worker.demo.big-data-europe.local"
+      "label": "Visualization",
+      "base-url": "http://viz.aggrdemo.semte.ch"
     }
-  },
+  },  
   {
     "id": 3,
     "type": "user-interfaces",
     "attributes": {
-      "label": "HDFS Namenode",
-      "base-url": "http://hdfs-namenode.demo.big-data-europe.local"
+      "label": "Spark Master",
+      "base-url": "http://spark-master.aggrdemo.semte.ch"
     }
   },
   {
     "id": 4,
     "type": "user-interfaces",
     "attributes": {
-      "label": "HDFS Node manager",
-      "base-url": "http://hdfs-nodemanager.demo.big-data-europe.local"
+      "label": "Spark Worker",
+      "base-url": "http://spark-worker.aggrdemo.semte.ch"
     }
   },
   {
     "id": 5,
     "type": "user-interfaces",
     "attributes": {
-      "label": "HDFS Resource manager",
-      "base-url": "http://hdfsresource.demo.big-data-europe.local"
+      "label": "HDFS Namenode",
+      "base-url": "http://hdfs-namenode.aggrdemo.semte.ch"
     }
   },
   {
@@ -44,7 +44,7 @@
     "type": "user-interfaces",
     "attributes": {
       "label": "Hue",
-      "base-url": "http://hue.demo.big-data-europe.local"
+      "base-url": "http://hue.aggrdemo.semte.ch"
     }
   },
   {
@@ -52,17 +52,8 @@
     "type": "user-interfaces",
     "attributes": {
       "label": "Virtuoso",
-      "base-url": "http://virtuoso.demo.big-data-europe.local"
-    }
-  },
-  {
-    "id": 8,
-    "type": "user-interfaces",
-    "attributes": {
-      "label": "Monitor",
-      "base-url": "http://monitor.demo.big-data-europe.local"
+      "base-url": "http://virtuoso.aggrdemo.semte.ch"
     }
   }
-
 ]
 }
