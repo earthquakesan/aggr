@@ -15,6 +15,7 @@ services:
       CLUSTER_NAME: test
       INIT_DAEMON_STEP: setup_hdfs
       VIRTUAL_HOST: hdfs-namenode.demo.big-data-europe.local
+      CSS_SOURCE: "hadoop"
     env_file:
       - ./config/hadoop/hadoop.env
   resourcemanager:
@@ -26,6 +27,7 @@ services:
     environment:
       VIRTUAL_HOST: hdfs-resourcemanager.demo.big-data-europe.local
       VIRTUAL_PORT: 8088
+      CSS_SOURCE: "hadoop"      
     env_file:
       - ./config/hadoop/hadoop.env
   historyserver:
@@ -33,6 +35,8 @@ services:
     hostname: historyserver
     volumes:
       - ./data/hadoop/historyserver:/hadoop/yarn/timeline
+    environment:
+      CSS_SOURCE: "hadoop"      
     env_file:
       - ./config/hadoop/hadoop.env
   nodemanager:
@@ -42,11 +46,14 @@ services:
       - "8042"
     environment:
       VIRTUAL_HOST: hdfs-nodemanager.demo.big-data-europe.local
+      CSS_SOURCE: "hadoop"      
     env_file:
       - ./config/hadoop/hadoop.env
   datanode:
     image: bde2020/hadoop-datanode:1.0.0
     hostname: datanode
+    environment:
+      CSS_SOURCE: "hadoop"      
     env_file:
       - ./config/hadoop/hadoop.env
   filebrowser:
@@ -63,6 +70,7 @@ services:
       INIT_DAEMON_STEP: setup_spark
       VIRTUAL_HOST: spark-master.demo.big-data-europe.local
       VIRTUAL_PORT: 8080
+      CSS_SOURCE: "spark-master"
     volumes:
       - ./data/spark-master:/data
   worker:
@@ -72,6 +80,7 @@ services:
     environment:
       VIRTUAL_HOST: spark-worker.demo.big-data-europe.local
       VIRTUAL_PORT: 8081
+      CSS_SOURCE: "spark-master"      
   aggr:
     image: caspervg/aggr
     environment:
@@ -86,29 +95,11 @@ services:
     environment:
       VIRTUAL_HOST: demo.big-data-europe.local
   csswrapper:
-    image: madnificent/demo-spark-sensor-data-integrator-css-wrapper
+    image: bde2020/nginx-proxy-with-css
     ports:
       - 80:80
-    links:
-      - namenode:namenode
-      - resourcemanager:resourcemanager
-      - nodemanager:nodemanager
-      - filebrowser:filebrowser
-      - master:master
-      - worker:worker
-      - integratorui:integratorui
-      - monitor:monitor
-      - database:database
-    depends_on:
-      - namenode
-      - resourcemanager
-      - nodemanager
-      - filebrowser
-      - master
-      - worker
-      - integratorui
-      - monitor
-      - database
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
   ###
   # mu.semte.ch stack
   ###
