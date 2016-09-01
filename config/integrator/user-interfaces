@@ -12,7 +12,7 @@
     "type": "user-interfaces",
     "attributes": {
       "label": "Visualization",
-      "base-url": "http://viz.aggrdemo.semte.ch",
+      "base-url": "http://viz.aggrdemo.semte.ch/",
       "append-path": "map"
     }
   },  
