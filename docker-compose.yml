@@ -101,7 +101,7 @@ services:
     environment:
       VIRTUAL_HOST: aggrdemo.semte.ch
   csswrapper:
-    image: bde2020/nginx-proxy-with-css
+    image: bde2020/nginx-proxy-with-css:1.0.0
     ports:
       - 10080:80
     volumes:
