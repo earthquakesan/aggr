@@ -5,7 +5,7 @@ services:
   # Spark big data aggregation service
   ###
   viz:
-    image: erikap/aggr-viz:1.1.1
+    image: erikap/aggr-viz:1.2.0
     links:
       - identifier:backend
     environment:
