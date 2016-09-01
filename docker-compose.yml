@@ -128,6 +128,8 @@ services:
     image: caspervg/aggr-web
     volumes:
       - ./data/logs:/logs
+    links:
+      - database:database
   database:
     image: tenforce/virtuoso:1.0.0-virtuoso7.2.2
     environment:
