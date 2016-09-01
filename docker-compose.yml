@@ -90,7 +90,7 @@ services:
   aggr:
     image: caspervg/aggr
     environment:
-      INIT_DAEMON_STEP: compute_aggregations
+      INIT_DAEMON_STEP: aggregate_data_loop
       HDFS_URL: hdfs://namenode:8020
     links:
       - "master:spark-master"
