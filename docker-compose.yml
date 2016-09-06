@@ -95,7 +95,7 @@ services:
     links:
       - "master:spark-master"
   integratorui:
-    image: bde2020/integrator-ui:0.4.2
+    image: bde2020/integrator-ui:0.4.3
     volumes:
       - ./config/integrator:/app/config
     environment:
