@@ -110,7 +110,7 @@ services:
   # mu.semte.ch stack
   ###
   monitor:
-    image: bde2020/pipeline-monitor-frontend:0.2.1
+    image: bde2020/pipeline-monitor-frontend:0.2.2
     links:
       - identifier:backend
     environment:
